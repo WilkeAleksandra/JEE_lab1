@@ -2,7 +2,6 @@ package pl.edu.pg.eti.kask.javaee.hospital.doctor;
 
 import pl.edu.pg.eti.kask.javaee.hospital.doctor.model.Doctor;
 
-import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
 import java.util.ArrayList;
 import java.util.List;
@@ -22,14 +21,6 @@ public class DoctorService {
     private final List<Doctor> doctors = new ArrayList<>();
 
     public DoctorService(){
-    }
-
-    @PostConstruct
-    public void init() {
-        doctors.add(new Doctor(1, "Jan", "Kowalski"));
-        doctors.add(new Doctor(2, "Piotr", "Nowak"));
-        doctors.add(new Doctor(3, "Iwona", "Kaminska"));
-        doctors.add(new Doctor(4, "Barbara", "Nowicka"));
     }
 
     /**
@@ -52,5 +43,13 @@ public class DoctorService {
             doctor.setId(doctors.stream().mapToInt(Doctor::getId).max().orElse(0) + 1);
             doctors.add(new Doctor(doctor));
         }
+    }
+
+    /**
+     * @param id doctor id
+     * @return single doctor or null if empty
+     */
+    public synchronized Doctor findDoctor(int id) {
+        return doctors.stream().filter(doctor -> doctor.getId() == id).findFirst().map(Doctor::new).orElse(null);
     }
 }

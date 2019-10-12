@@ -1,6 +1,6 @@
 package pl.edu.pg.eti.kask.javaee.hospital.doctor.view;
 
-import pl.edu.pg.eti.kask.javaee.hospital.doctor.DoctorService;
+import pl.edu.pg.eti.kask.javaee.hospital.HospitalService;
 import pl.edu.pg.eti.kask.javaee.hospital.doctor.model.Doctor;
 
 import javax.enterprise.context.RequestScoped;
@@ -15,7 +15,7 @@ public class DoctorList {
     /**
      * Injected doctor service.
      */
-    private DoctorService service;
+    private HospitalService service;
 
     /**
      * Lazy loaded list of books.
@@ -23,7 +23,7 @@ public class DoctorList {
     private List<Doctor> doctors;
 
     @Inject
-    public DoctorList(DoctorService service) {
+    public DoctorList(HospitalService service) {
         this.service = service;
 }
     /**
@@ -31,7 +31,7 @@ public class DoctorList {
      */
     public List<Doctor> getDoctors() {
         if (doctors == null) {
-            doctors = service.findAllDoctors();
+            doctors = service.getDoctorService().findAllDoctors();
         }
         return doctors;
     }

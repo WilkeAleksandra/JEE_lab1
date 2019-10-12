@@ -1,5 +1,6 @@
 package pl.edu.pg.eti.kask.javaee.hospital.treatment.view;
 
+import pl.edu.pg.eti.kask.javaee.hospital.HospitalService;
 import pl.edu.pg.eti.kask.javaee.hospital.treatment.TreatmentService;
 import pl.edu.pg.eti.kask.javaee.hospital.treatment.model.Treatment;
 
@@ -20,7 +21,7 @@ public class TreatmentList {
     /**
      * Injected treatment service.
      */
-    private TreatmentService service;
+    private HospitalService service;
 
     /**
      * Lazy loaded list of treatments.
@@ -28,7 +29,7 @@ public class TreatmentList {
     private List<Treatment> treatments;
 
     @Inject
-    public TreatmentList(TreatmentService service) {
+    public TreatmentList(HospitalService service) {
         this.service = service;
     }
 
@@ -37,7 +38,7 @@ public class TreatmentList {
      */
     public List<Treatment> getTreatments() {
         if (treatments == null) {
-            treatments = service.findAllTreatments();
+            treatments = service.getTreatmentService().findAllTreatments();
         }
         return treatments;
     }
