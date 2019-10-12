@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://xmlns.jcp.org/jsf/html"
+                xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+                xmlns:f="http://xmlns.jcp.org/jsf/core"
+                template="/WEB-INF/templates/main.xhtml">
+
+    <ui:define name="content">
+        <h:dataTable value="#{treatmentList.treatments}" var="treatment">
+            <h:column>
+                <h:outputText value="#{treatment.id}"/>
+            </h:column>
+
+            <h:column>
+                <h:outputText value="#{treatment.type}"/>
+            </h:column>
+
+            <h:column>
+                <h:outputText value="#{treatment.status}"/>
+            </h:column>
+
+            <h:column>
+                <h:dataTable value="#{treatment.doctors}" var="doctor">
+                    <h:column>
+                        <h:outputText value="#{doctor.name} #{doctor.surname}"/>
+                    </h:column>
+                </h:dataTable>
+            </h:column>
+        </h:dataTable>
+    </ui:define>
+</ui:composition>
