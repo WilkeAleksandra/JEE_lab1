@@ -25,58 +25,31 @@ public class TreatmentService {
      */
     private final List<Treatment> treatments = new ArrayList<>();
 
-    /**
-     * All availiable doctors.
-     */
-    private final List<Doctor> doctors = new ArrayList<>();
-
     public TreatmentService(){
     }
-
     @PostConstruct
     public void init() {
-        doctors.add(new Doctor(1, "Jan", "Kowalski"));
-        doctors.add(new Doctor(2, "Piotr", "Nowak"));
-        doctors.add(new Doctor(3, "Iwona", "Kaminska"));
-        doctors.add(new Doctor(4, "Barbara", "Nowicka"));
-
-        treatments.add(new Treatment(
-                1,
-                "Badanie wzroku",
-                LocalDate.of(2019, 10, 20),
-                LocalTime.of(10, 00, 00),
-                Status.INCOMPLETE,
-                List.of(doctors.get(2))));
-
-        treatments.add(new Treatment(
-                2,
-                "Badanie USG",
-                LocalDate.of(2019, 12, 10),
-                LocalTime.of(12, 15, 00),
-                Status.INCOMPLETE,
-                List.of(doctors.get(1))));
-
-        treatments.add(new Treatment(
-                3,
-                "Operacja kolana",
-                LocalDate.of(2019, 6, 10),
-                LocalTime.of(10, 00, 00),
-                Status.COMPLETE,
-                List.of(doctors.get(0), doctors.get(3))));
-
+        treatments.add(new Treatment(1,
+                                    "Badanie wzroku",
+                                    LocalDate.of(2013, 10, 11),
+                                    LocalTime.of(10,00,00),
+                                    Status.COMPLETE,
+                                    List.of(new Doctor(1,"Jan", "Nowak"))));
     }
-
-    /**
-     * @return all available doctors
-     */
-    public synchronized List<Doctor> findAllDoctors() {
-        return doctors.stream().map(Doctor::new).collect(Collectors.toList());
-    }
-
     /**
      * @return all available treatments
      */
     public synchronized List<Treatment> findAllTreatments() {
         return treatments.stream().map(Treatment::new).collect(Collectors.toList());
+    }
+
+    public synchronized void saveTreatment(Treatment treatment) {
+        if (treatment.getId() != 0) {
+            treatments.removeIf(b -> b.getId() == treatment.getId());
+            treatments.add(new Treatment(treatment));
+        } else {
+            treatment.setId(treatments.stream().mapToInt(Treatment::getId).max().orElse(0) + 1);
+            treatments.add(new Treatment(treatment));
+        }
     }
 }

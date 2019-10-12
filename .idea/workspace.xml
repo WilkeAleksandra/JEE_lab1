@@ -6,7 +6,16 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="309f716b-e0bd-484b-bcfa-a2478872382b" name="Default Changelist" comment="" />
+    <list default="true" id="309f716b-e0bd-484b-bcfa-a2478872382b" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/pg/eti/kask/javaee/hospital/doctor/view/DoctorList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/pg/eti/kask/javaee/hospital/treatment/TreatmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/pg/eti/kask/javaee/hospital/treatment/TreatmentService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/main.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/templates/main.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Lab1-1.0-SNAPSHOT/WEB-INF/classes/pl/edu/pg/eti/kask/javaee/hospital/TreatmentService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Lab1-1.0-SNAPSHOT/WEB-INF/classes/pl/edu/pg/eti/kask/javaee/hospital/treatment/view/TreatmentList.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Lab1-1.0-SNAPSHOT/WEB-INF/classes/pl/edu/pg/eti/kask/javaee/hospital/treatment/view/TreatmentList.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Lab1-1.0-SNAPSHOT/WEB-INF/templates/main.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Lab1-1.0-SNAPSHOT/WEB-INF/templates/main.xhtml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +33,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MavenImportPreferences">
     <option name="importingSettings">
       <MavenImportingSettings>
@@ -32,13 +44,25 @@
     </option>
   </component>
   <component name="ProjectId" id="1S69W37y4J1EOW0wcXnUXnQUbtj" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp/WEB-INF" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="Lombok plugin" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="pl.edu.pg.eti.kask.javaee.hospital.doctor" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\PC\Desktop\semestr_7\JEE\Lab1\src\main\webapp\WEB-INF" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -137,11 +161,22 @@
       <option name="presentableId" value="Default" />
       <updated>1570873207182</updated>
       <workItem from="1570873211967" duration="1186000" />
-      <workItem from="1570874670891" duration="8673000" />
+      <workItem from="1570874670891" duration="14421000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
