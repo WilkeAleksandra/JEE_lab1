@@ -11,8 +11,8 @@ import java.io.Serializable;
  */
 @Getter
 @Setter
-@AllArgsConstructor
 @NoArgsConstructor
+@AllArgsConstructor
 @EqualsAndHashCode
 @ToString
 public class Doctor implements Serializable {

@@ -45,6 +45,8 @@
             </h:column>
 
         </h:dataTable>
-        <h:button value="Dodaj" outcome="treatment_create.xhtml"/>
+        <h:button value="Dodaj" outcome="treatment_edit.xhtml">
+        <f:param name="action" value="delete" />
+        </h:button>
     </ui:define>
 </ui:composition>

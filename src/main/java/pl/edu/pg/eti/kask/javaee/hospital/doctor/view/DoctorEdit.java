@@ -45,4 +45,5 @@ public class DoctorEdit implements Serializable {
         service.saveDoctor(doctor);
         return "doctor_list?faces-redirect=true";
     }
+
 }

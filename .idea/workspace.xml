@@ -7,19 +7,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="309f716b-e0bd-484b-bcfa-a2478872382b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/pg/eti/kask/javaee/hospital/doctor/view/DoctorCreate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/pl/edu/pg/eti/kask/javaee/hospital/treatment/view/TreatmentCreate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/doctor_create.xhtml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/treatment_create.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/pg/eti/kask/javaee/hospital/treatment/view/TreatmentEdit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/pg/eti/kask/javaee/hospital/treatment/view/TreatmentEdit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/pg/eti/kask/javaee/hospital/doctor/model/Doctor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/pg/eti/kask/javaee/hospital/doctor/model/Doctor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/pl/edu/pg/eti/kask/javaee/hospital/doctor/view/DoctorEdit.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/pl/edu/pg/eti/kask/javaee/hospital/doctor/view/DoctorEdit.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/doctor_create.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/doctor_create.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/doctor_edit.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/doctor_edit.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/doctor_list.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/doctor_list.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/treatment_edit.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/treatment_edit.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/treatment_list.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/treatment_list.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/Lab1-1.0-SNAPSHOT/WEB-INF/classes/pl/edu/pg/eti/kask/javaee/hospital/treatment/view/TreatmentEdit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Lab1-1.0-SNAPSHOT/WEB-INF/classes/pl/edu/pg/eti/kask/javaee/hospital/treatment/view/TreatmentEdit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Lab1-1.0-SNAPSHOT/WEB-INF/classes/pl/edu/pg/eti/kask/javaee/hospital/doctor/model/Doctor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Lab1-1.0-SNAPSHOT/WEB-INF/classes/pl/edu/pg/eti/kask/javaee/hospital/doctor/model/Doctor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Lab1-1.0-SNAPSHOT/WEB-INF/classes/pl/edu/pg/eti/kask/javaee/hospital/doctor/view/DoctorEdit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/Lab1-1.0-SNAPSHOT/WEB-INF/classes/pl/edu/pg/eti/kask/javaee/hospital/doctor/view/DoctorEdit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Lab1-1.0-SNAPSHOT/doctor_create.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Lab1-1.0-SNAPSHOT/doctor_create.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Lab1-1.0-SNAPSHOT/doctor_edit.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Lab1-1.0-SNAPSHOT/doctor_edit.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Lab1-1.0-SNAPSHOT/doctor_list.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Lab1-1.0-SNAPSHOT/doctor_list.xhtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Lab1-1.0-SNAPSHOT/treatment_edit.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Lab1-1.0-SNAPSHOT/treatment_edit.xhtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/Lab1-1.0-SNAPSHOT/treatment_list.xhtml" beforeDir="false" afterPath="$PROJECT_DIR$/target/Lab1-1.0-SNAPSHOT/treatment_list.xhtml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/pg/eti/kask/javaee/hospital/treatment/view/TreatmentEdit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/pg/eti/kask/javaee/hospital/treatment/view/TreatmentEdit.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/pl/edu/pg/eti/kask/javaee/hospital/doctor/view/DoctorEdit.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/pl/edu/pg/eti/kask/javaee/hospital/doctor/view/DoctorEdit.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -167,7 +169,7 @@
       <option name="presentableId" value="Default" />
       <updated>1570873207182</updated>
       <workItem from="1570873211967" duration="1186000" />
-      <workItem from="1570874670891" duration="35968000" />
+      <workItem from="1570874670891" duration="43302000" />
     </task>
     <servers />
   </component>

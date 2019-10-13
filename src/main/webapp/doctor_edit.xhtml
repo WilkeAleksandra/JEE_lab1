@@ -4,15 +4,16 @@
                 xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
                 xmlns:f="http://xmlns.jcp.org/jsf/core"
                 template="/WEB-INF/templates/main.xhtml">
-    <f:metadata>
-        <f:viewParam name="doctor" value="#{doctorEdit.doctor}" required="true"/>
+  <f:metadata>
+        <f:viewParam name="doctor"  value="#{doctorEdit.doctor}" required="false"/>
     </f:metadata>
+
 
     <ui:define name="content">
         <h:form>
             <h:panelGrid columns="3">
                 <h:outputLabel value="Imię:" for="name"/>
-                <h:inputText id="name" value="#{doctorEdit.doctor.name}"/>
+                <h:inputText id="name"  value="#{doctorEdit.doctor.name}"/>
                 <h:message for="name"/>
 
                 <h:outputLabel value="Nazwisko:" for="surname"/>
