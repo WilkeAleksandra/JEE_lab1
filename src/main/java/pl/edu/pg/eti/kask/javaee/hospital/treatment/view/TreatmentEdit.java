@@ -68,7 +68,7 @@ public class TreatmentEdit  implements Serializable {
      *
      * @return navigation
      */
-    public String saveBook() {
+    public String saveTreatment() {
         service.getTreatmentService().saveTreatment(treatment);
         return "treatment_list?faces-redirect=true";
     }
