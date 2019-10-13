@@ -52,4 +52,8 @@ public class DoctorService {
     public synchronized Doctor findDoctor(int id) {
         return doctors.stream().filter(doctor -> doctor.getId() == id).findFirst().map(Doctor::new).orElse(null);
     }
+
+    public void removeDoctor(Doctor doctor) {
+        doctors.removeIf(b -> b.equals(doctor));
+    }
 }

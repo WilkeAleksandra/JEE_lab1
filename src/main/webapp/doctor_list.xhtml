@@ -18,6 +18,25 @@
             <h:column>
                 <h:outputText value="#{doctor.surname}"/>
             </h:column>
+
+            <h:column>
+                <h:button value="Pokaż" outcome="doctor_view.xhtml">
+                    <f:param name="doctor" value="#{doctor.id}"/>
+                </h:button>
+            </h:column>
+
+            <h:column>
+                <h:button value="Edytuj" outcome="doctor_edit.xhtml">
+                    <f:param name="doctor" value="#{doctor.id}"/>
+                </h:button>
+            </h:column>
+
+            <h:column>
+                <h:form>
+                    <h:commandButton value="Usuń" action="#{doctorList.removeDoctor(doctor)}"/>
+                </h:form>
+            </h:column>
+
         </h:dataTable>
     </ui:define>
 </ui:composition>

@@ -26,6 +26,24 @@
                     </h:column>
                 </h:dataTable>
             </h:column>
+            <h:column>
+                <h:button value="Pokaż" outcome="treatment_view.xhtml">
+                    <f:param name="treatment" value="#{treatment.id}"/>
+                </h:button>
+            </h:column>
+
+           <h:column>
+                <h:button value="Edytuj" outcome="treatment_edit.xhtml">
+                    <f:param name="treatment" value="#{treatment.id}"/>
+                </h:button>
+            </h:column>
+
+            <h:column>
+                <h:form>
+                    <h:commandButton value="Usuń" action="#{treatmentList.removeTreatment(treatment)}"/>
+                </h:form>
+            </h:column>
+
         </h:dataTable>
     </ui:define>
 </ui:composition>

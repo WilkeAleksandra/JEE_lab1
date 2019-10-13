@@ -20,13 +20,26 @@ public class TreatmentService {
      */
     private final List<Treatment> treatments = new ArrayList<>();
 
-    public TreatmentService(){
+    public TreatmentService() {
     }
+
     /**
      * @return all available treatments
      */
     public synchronized List<Treatment> findAllTreatments() {
         return treatments.stream().map(Treatment::new).collect(Collectors.toList());
+    }
+
+    /**
+     * @param id book id
+     * @return single book or null if empty
+     */
+    public synchronized Treatment findTreatment(int id) {
+        return treatments.stream()
+                .filter(treatment -> treatment.getId() == id)
+                .findFirst()
+                .map(Treatment::new)
+                .orElse(null);
     }
 
     public synchronized void saveTreatment(Treatment treatment) {
@@ -37,5 +50,9 @@ public class TreatmentService {
             treatment.setId(treatments.stream().mapToInt(Treatment::getId).max().orElse(0) + 1);
             treatments.add(new Treatment(treatment));
         }
+    }
+
+    public void removeTreatment(Treatment treatment) {
+        treatments.removeIf(b -> b.equals(treatment));
     }
 }

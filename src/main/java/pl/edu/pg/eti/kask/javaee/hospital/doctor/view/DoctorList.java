@@ -35,4 +35,15 @@ public class DoctorList {
         }
         return doctors;
     }
+
+    /**
+     * Deletes doctor from the storage.
+     *
+     * @param doctor doctor to be deleted
+     * @return navigation url
+     */
+    public String removeDoctor(Doctor doctor) {
+        service.getDoctorService().removeDoctor(doctor);
+        return "doctor_list?faces-redirect=true";
+    }
 }

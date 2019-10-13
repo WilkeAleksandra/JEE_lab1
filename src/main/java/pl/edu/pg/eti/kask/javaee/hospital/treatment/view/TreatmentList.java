@@ -1,7 +1,6 @@
 package pl.edu.pg.eti.kask.javaee.hospital.treatment.view;
 
 import pl.edu.pg.eti.kask.javaee.hospital.HospitalService;
-import pl.edu.pg.eti.kask.javaee.hospital.treatment.TreatmentService;
 import pl.edu.pg.eti.kask.javaee.hospital.treatment.model.Treatment;
 
 import javax.enterprise.context.RequestScoped;
@@ -41,5 +40,16 @@ public class TreatmentList {
             treatments = service.getTreatmentService().findAllTreatments();
         }
         return treatments;
+    }
+
+    /**
+     * Deletes treatment from the storage.
+     *
+     * @param treatment treatment to be deleted
+     * @return navigation url
+     */
+    public String removeTreatment(Treatment treatment) {
+        service.getTreatmentService().removeTreatment(treatment);
+        return "treatment_list?faces-redirect=true";
     }
 }
