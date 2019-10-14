@@ -11,9 +11,9 @@ import java.io.Serializable;
  */
 @Getter
 @Setter
-@NoArgsConstructor
 @AllArgsConstructor
-@EqualsAndHashCode
+@NoArgsConstructor
+@EqualsAndHashCode(of = "id")
 @ToString
 public class Doctor implements Serializable {
 
@@ -32,6 +32,8 @@ public class Doctor implements Serializable {
      */
     private String surname;
 
+    private MedicalSpecialization specialization;
+
     /**
      * Cloning constructor.
      *
@@ -41,5 +43,8 @@ public class Doctor implements Serializable {
         this.id = doctor.id;
         this.name = doctor.name;
         this.surname = doctor.surname;
+        this.specialization = doctor.specialization;
     }
+
+
 }

@@ -1,9 +1,8 @@
 package pl.edu.pg.eti.kask.javaee.hospital.treatment.view;
 
-import lombok.Getter;
 import lombok.Setter;
-import pl.edu.pg.eti.kask.javaee.hospital.HospitalService;
 import pl.edu.pg.eti.kask.javaee.hospital.doctor.model.Doctor;
+import pl.edu.pg.eti.kask.javaee.hospital.treatment.TreatmentService;
 import pl.edu.pg.eti.kask.javaee.hospital.treatment.model.Status;
 import pl.edu.pg.eti.kask.javaee.hospital.treatment.model.Treatment;
 
@@ -27,7 +26,7 @@ public class TreatmentEdit  implements Serializable {
     /**
      * Injected treatment service.
      */
-    private HospitalService service;
+    private TreatmentService service;
 
     /**
      * All doctors in storage.
@@ -38,11 +37,17 @@ public class TreatmentEdit  implements Serializable {
      * Treatment to be displayed.
      */
     @Setter
-    @Getter
     private Treatment treatment;
 
+    public Treatment getTreatment() {
+        if (treatment == null){
+            treatment = new Treatment();
+        }
+        return treatment;
+    }
+
     @Inject
-    public TreatmentEdit(HospitalService service) {
+    public TreatmentEdit(TreatmentService service) {
         this.service = service;
     }
 
@@ -50,10 +55,8 @@ public class TreatmentEdit  implements Serializable {
      * @return all doctors in storage
      */
     public Collection<Doctor> getAvailableDoctors() {
-        if (availableDoctors == null) {
-            availableDoctors = service.getDoctorService().findAllDoctors();
-        }
-        return availableDoctors;
+            availableDoctors = service.findAllDoctors();
+            return availableDoctors;
     }
 
     /**
@@ -69,7 +72,7 @@ public class TreatmentEdit  implements Serializable {
      * @return navigation
      */
     public String saveTreatment() {
-        service.getTreatmentService().saveTreatment(treatment);
+        service.saveTreatment(treatment);
         return "treatment_list?faces-redirect=true";
     }
 }

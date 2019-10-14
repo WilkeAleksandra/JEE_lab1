@@ -5,7 +5,7 @@
                 xmlns:f="http://xmlns.jcp.org/jsf/core"
                 template="/WEB-INF/templates/main.xhtml">
   <f:metadata>
-        <f:viewParam name="doctor"  value="#{doctorEdit.doctor}" required="false"/>
+        <f:viewParam name="doctor"  value="#{doctorEdit.doctor}" />
     </f:metadata>
 
 
@@ -13,14 +13,22 @@
         <h:form>
             <h:panelGrid columns="3">
                 <h:outputLabel value="Imię:" for="name"/>
-                <h:inputText id="name"  value="#{doctorEdit.doctor.name}"/>
+                <h:inputText id="name"  value="#{doctorEdit.doctor.name}" required="true"
+                             requiredMessage="Pole jest wymagane"/>
                 <h:message for="name"/>
 
                 <h:outputLabel value="Nazwisko:" for="surname"/>
-                <h:inputText id="surname" value="#{doctorEdit.doctor.surname}"/>
+                <h:inputText id="surname" value="#{doctorEdit.doctor.surname}" required="true"
+                             requiredMessage="Pole jest wymagane"/>
                 <h:message for="surname"/>
 
-                <h:commandButton value="Save" action="#{doctorEdit.saveDoctor}"/>
+                <h:outputLabel value="Specializacja" for="specializations"/>
+                <h:selectOneMenu id="specializations" value="#{doctorEdit.doctor.specialization}">
+                    <f:selectItems value="#{doctorEdit.availableSpecializations}" var="spec" itemValue="#{spec}" itemLabel="#{spec}"/>
+                </h:selectOneMenu>
+                <h:message for="specializations"/>
+
+                <h:commandButton value="Save" action="#{doctorEdit.saveDoctor()}"/>
                 <h:messages/>
             </h:panelGrid>
         </h:form>

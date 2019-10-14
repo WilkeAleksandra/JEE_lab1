@@ -1,6 +1,6 @@
 package pl.edu.pg.eti.kask.javaee.hospital.treatment.view;
 
-import pl.edu.pg.eti.kask.javaee.hospital.HospitalService;
+import pl.edu.pg.eti.kask.javaee.hospital.treatment.TreatmentService;
 import pl.edu.pg.eti.kask.javaee.hospital.treatment.model.Treatment;
 
 import javax.enterprise.context.RequestScoped;
@@ -20,7 +20,7 @@ public class TreatmentList {
     /**
      * Injected treatment service.
      */
-    private HospitalService service;
+    private TreatmentService service;
 
     /**
      * Lazy loaded list of treatments.
@@ -28,7 +28,7 @@ public class TreatmentList {
     private List<Treatment> treatments;
 
     @Inject
-    public TreatmentList(HospitalService service) {
+    public TreatmentList(TreatmentService service) {
         this.service = service;
     }
 
@@ -37,7 +37,7 @@ public class TreatmentList {
      */
     public List<Treatment> getTreatments() {
         if (treatments == null) {
-            treatments = service.getTreatmentService().findAllTreatments();
+            treatments = service.findAllTreatments();
         }
         return treatments;
     }
@@ -49,7 +49,7 @@ public class TreatmentList {
      * @return navigation url
      */
     public String removeTreatment(Treatment treatment) {
-        service.getTreatmentService().removeTreatment(treatment);
+        service.removeTreatment(treatment);
         return "treatment_list?faces-redirect=true";
     }
 }

@@ -5,27 +5,36 @@
                 xmlns:f="http://xmlns.jcp.org/jsf/core"
                 template="/WEB-INF/templates/main.xhtml">
     <f:metadata>
-        <f:viewParam name="treatment" value="#{treatmentEdit.treatment}" required="true"/>
+        <f:viewParam name="treatment" value="#{treatmentEdit.treatment}" />
     </f:metadata>
 
     <ui:define name="content">
         <h:form>
             <h:panelGrid columns="3">
                 <h:outputLabel value="Typ:" for="type"/>
-                <h:inputText id="type" value="#{treatmentEdit.treatment.type}"/>
+                <h:inputText id="type" value="#{treatmentEdit.treatment.type}" required="true"
+                             requiredMessage="Pole jest wymagane"/>
                 <h:message for="type"/>
 
-                <h:outputLabel value="Status" for="status"/>
-                <h:selectOneMenu id="status" value="#{treatmentEdit.treatment.status}">
+                <h:outputLabel value="Status" for="statuses"/>
+                <h:selectOneMenu id="statuses" value="#{treatmentEdit.treatment.status}">
                     <f:selectItems value="#{treatmentEdit.availableStatuses}" var="status" itemValue="#{status}" itemLabel="#{status}"/>
                 </h:selectOneMenu>
-                <h:message for="status"/>
+                <h:message for="statuses"/>
 
                 <h:outputLabel value="Data" for="date"/>
-                <h:inputText id="date" value="#{treatmentEdit.treatment.date}">
+                <h:inputText id="date" value="#{treatmentEdit.treatment.date}" required="true"
+                             requiredMessage="Pole jest wymagane" validatorMessage="Niepoprawny format. Przykład: 2019-05-10.">
                     <f:convertDateTime type="localDate"  pattern="yyyy-MM-dd"/>
                 </h:inputText>
                 <h:message for="date"/>
+
+                <h:outputLabel value="Godzina" for="time"/>
+                <h:inputText id="time" value="#{treatmentEdit.treatment.time}" required="true"
+                             requiredMessage="Pole jest wymagane" validatorMessage="Niepoprawny format. Przykład: 10:10.">
+                    <f:convertDateTime type="localTime"  pattern="HH:mm"/>
+                </h:inputText>
+                <h:message for="time"/>
 
                 <h:outputLabel value="Doctors:" for="doctors"/>
                 <h:selectManyListbox id="doctors" collectionType="java.util.ArrayList" value="#{treatmentEdit.treatment.doctors}" style="width: 100%;">

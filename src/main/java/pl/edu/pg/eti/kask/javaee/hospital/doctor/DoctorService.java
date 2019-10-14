@@ -1,8 +1,11 @@
 package pl.edu.pg.eti.kask.javaee.hospital.doctor;
 
+import pl.edu.pg.eti.kask.javaee.hospital.DataService;
 import pl.edu.pg.eti.kask.javaee.hospital.doctor.model.Doctor;
 
+import javax.annotation.PostConstruct;
 import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -19,6 +22,9 @@ public class DoctorService {
      * All availiable doctors.
      */
     private final List<Doctor> doctors = new ArrayList<>();
+
+    @Inject
+    private DataService dataService;
 
     public DoctorService(){
     }
@@ -55,5 +61,10 @@ public class DoctorService {
 
     public void removeDoctor(Doctor doctor) {
         doctors.removeIf(b -> b.equals(doctor));
+    }
+
+    @PostConstruct
+    public void init() {
+     doctors.addAll(dataService.getDoctorList());
     }
 }
