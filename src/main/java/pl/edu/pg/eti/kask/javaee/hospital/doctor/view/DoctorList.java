@@ -25,7 +25,8 @@ public class DoctorList {
     @Inject
     public DoctorList(DoctorService service) {
         this.service = service;
-}
+    }
+
     /**
      * @return all books in storage
      */

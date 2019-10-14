@@ -26,7 +26,7 @@ public class DoctorService {
     @Inject
     private DataService dataService;
 
-    public DoctorService(){
+    public DoctorService() {
     }
 
     /**
@@ -65,6 +65,6 @@ public class DoctorService {
 
     @PostConstruct
     public void init() {
-     doctors.addAll(dataService.getDoctorList());
+        doctors.addAll(dataService.getDoctorList());
     }
 }

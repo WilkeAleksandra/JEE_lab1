@@ -31,10 +31,10 @@ public class DoctorEdit implements Serializable {
      * Doctor to be displayed.
      */
     @Setter
-    private Doctor doctor ;
+    private Doctor doctor;
 
     public Doctor getDoctor() {
-        if (doctor == null){
+        if (doctor == null) {
             doctor = new Doctor();
         }
         return doctor;

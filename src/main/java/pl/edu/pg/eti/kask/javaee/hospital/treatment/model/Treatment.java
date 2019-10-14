@@ -1,6 +1,8 @@
 package pl.edu.pg.eti.kask.javaee.hospital.treatment.model;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import pl.edu.pg.eti.kask.javaee.hospital.doctor.model.Doctor;
 
 import java.io.Serializable;
@@ -10,17 +12,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- *Just a treatment.
+ * Just a treatment.
  *
  * @author ewatusien
  */
 
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode
-@ToString
 public class Treatment implements Serializable {
 
 
@@ -50,7 +49,7 @@ public class Treatment implements Serializable {
     private Status status;
 
     /**
-     *Doctors responsible for treatment.
+     * Doctors responsible for treatment.
      */
     private List<Doctor> doctors;
 

@@ -1,6 +1,8 @@
 package pl.edu.pg.eti.kask.javaee.hospital.doctor.model;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
@@ -9,12 +11,9 @@ import java.io.Serializable;
  *
  * @author ewatusien
  */
-@Getter
-@Setter
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@EqualsAndHashCode(of = "id")
-@ToString
 public class Doctor implements Serializable {
 
     /**
