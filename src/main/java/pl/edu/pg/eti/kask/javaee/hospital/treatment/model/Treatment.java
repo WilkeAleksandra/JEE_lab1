@@ -36,6 +36,7 @@ public class Treatment implements Serializable {
     /**
      * Treatment date.
      */
+    //@JsonbDateFormat(value="yyyy-MM-dd")
     private LocalDate date;
 
     /**

@@ -38,6 +38,7 @@ public class TreatmentService {
      * @return all available treatments
      */
     public synchronized List<Treatment> findAllTreatments() {
+        validateDoctor();
         return treatments.stream().map(Treatment::new).collect(Collectors.toList());
     }
 
@@ -53,7 +54,7 @@ public class TreatmentService {
                 .orElse(null);
     }
 
-    public synchronized void saveTreatment(Treatment treatment) {
+    public synchronized int saveTreatment(Treatment treatment) {
         if (treatment.getId() != 0) {
             treatments.removeIf(b -> b.getId() == treatment.getId());
             treatments.add(new Treatment(treatment));
@@ -61,10 +62,15 @@ public class TreatmentService {
             treatment.setId(treatments.stream().mapToInt(Treatment::getId).max().orElse(0) + 1);
             treatments.add(new Treatment(treatment));
         }
+        return treatment.getId();
     }
 
-    public void removeTreatment(Treatment treatment) {
-        treatments.removeIf(b -> b.equals(treatment));
+    public Boolean removeTreatment(Treatment treatment) {
+        return treatments.removeIf(treatment1 -> treatment1.equals(treatment));
+    }
+
+    public Boolean removeTreatment(int id) {
+        return treatments.removeIf(treatment -> treatment.getId() == id);
     }
 
     @PostConstruct
@@ -74,5 +80,17 @@ public class TreatmentService {
 
     public synchronized List<Doctor> findAllDoctors() {
         return doctorService.findAllDoctors();
+    }
+
+    private void validateDoctor() {
+        for (Treatment treatment : treatments) {
+            List<Doctor> newDoctors = new ArrayList<>();
+            for (Doctor doctor : treatment.getDoctors()) {
+                if (doctorService.findDoctor(doctor.getId()) != null) {
+                    newDoctors.add(doctorService.findDoctor(doctor.getId()));
+                }
+            }
+            treatment.setDoctors(newDoctors);
+        }
     }
 }

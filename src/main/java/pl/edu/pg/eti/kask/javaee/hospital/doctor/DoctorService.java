@@ -41,7 +41,7 @@ public class DoctorService {
      *
      * @param doctor doctor to be saved
      */
-    public synchronized void saveDoctor(Doctor doctor) {
+    public synchronized Integer saveDoctor(Doctor doctor) {
         if (doctor.getId() != 0) {
             doctors.removeIf(b -> b.getId() == doctor.getId());
             doctors.add(new Doctor(doctor));
@@ -49,6 +49,7 @@ public class DoctorService {
             doctor.setId(doctors.stream().mapToInt(Doctor::getId).max().orElse(0) + 1);
             doctors.add(new Doctor(doctor));
         }
+        return doctor.getId();
     }
 
     /**
@@ -59,8 +60,12 @@ public class DoctorService {
         return doctors.stream().filter(doctor -> doctor.getId() == id).findFirst().map(Doctor::new).orElse(null);
     }
 
-    public void removeDoctor(Doctor doctor) {
-        doctors.removeIf(b -> b.equals(doctor));
+    public Boolean removeDoctor(Doctor doctor) {
+        return doctors.removeIf(doctor1 -> doctor1.equals(doctor));
+    }
+
+    public Boolean removeDoctor(int id) {
+        return doctors.removeIf(doctor -> doctor.getId()==id);
     }
 
     @PostConstruct
